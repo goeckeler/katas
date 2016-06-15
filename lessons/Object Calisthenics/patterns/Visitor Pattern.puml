@@ -1,0 +1,29 @@
+@startuml
+
+skinparam monochrome true
+
+title Visitor Pattern
+
+Client -down-> Element
+Client -down-> Visitor
+
+class Client
+interface Visitor {
+  visit(object : ConcreteElement)
+}
+
+class ConcreteVisitor
+
+class Element {
+  accept(visitor : Visitor)
+}
+
+class ConcreteElement {
+  accept(visitor : Visitor)
+}
+note right: visitor.visit(this)
+
+Visitor <|.. ConcreteVisitor
+Element <|-down- ConcreteElement
+
+@enduml

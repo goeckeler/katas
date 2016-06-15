@@ -1,0 +1,34 @@
+@startuml
+
+skinparam monochrome true
+
+title Double Dispatch Pattern
+
+class Client
+
+Client -left--> Shape
+Client -right--> Printer
+
+interface Shape {
+  print(printer : Printer)
+}
+
+class Circle
+class Rectangle
+note right: printer.print(this)
+
+interface Printer {
+  print(shape : Circle)
+  print(shape : Rectangle)
+}
+
+class LaserPrinter
+class InkjetPrinter
+
+Shape <|..-down- Circle
+Shape <|..-down- Rectangle
+
+Printer <|..-down- LaserPrinter
+Printer <|..-down- InkjetPrinter
+
+@enduml

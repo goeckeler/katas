@@ -1,0 +1,17 @@
+@startuml
+
+skinparam monochrome true
+
+title Self Shunt Pattern
+
+Test -down-> SubjectUnderTest
+
+class Test
+class SubjectUnderTest
+interface Dependency
+
+Dependency <|.. Test
+SubjectUnderTest -> Dependency
+
+@enduml
+
