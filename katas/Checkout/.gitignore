@@ -1,0 +1,29 @@
+# java
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Exclude the build directory
+build/*
+ 
+# Exclude OS X folder attributes
+.DS_Store
+
+# Exclude gradle 
+.gradle
+
+ # For VIM
+*.swp
+
+# For Eclipse
+.buildpath
+.project
+.settings/
+.classpath
+
+# For IntelliJ
+.idea
+*.iml
