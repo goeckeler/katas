@@ -1,13 +1,9 @@
 # java
 *.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
 # Exclude the build directory
 build/*
+bin/*
  
 # Exclude OS X folder attributes
 .DS_Store
