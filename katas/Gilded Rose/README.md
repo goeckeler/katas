@@ -12,6 +12,14 @@ If you are not too keen on Java, go to Emily's page, she provides many more lang
 
 ## Kata ##
 
+See "Gilded Rose Requirements". Get yourself aquainted with the requirements and the code. Try to maintain it. Remind yourself to test drive your changes.
 
-## Gettings started ##
+## Getting started ##
 
+1. Read the requirements.
+2. Compile and read the code.
+3. Fix the unit test.
+4. Fix the golden master test, alternatively add one yourself.
+5. Refactor. Rinse and repeat.
+6. Add new requirements.
+7. Refactor. Rinse and Repeat.
