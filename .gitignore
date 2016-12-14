@@ -222,3 +222,4 @@ pip-log.txt
 .mr.developer.cfg
 Filer/kata/dependency-reduced-pom.xml
 Exception Testing/Kata/dependency-reduced-pom.xml
+katas/Gilded Rose/src/test/resources/regression/GoldenMasterDummy.txt
