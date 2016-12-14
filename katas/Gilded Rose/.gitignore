@@ -1,8 +1,16 @@
+# IntelliJ
 .idea/
 *.iml
-target/
 
+# Eclipse
 .classpath
 .project
 bin/
 .settings/
+
+# Maven
+target/
+
+# Gradle
+.gradle
+build/
