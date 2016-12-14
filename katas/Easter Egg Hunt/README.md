@@ -1,5 +1,9 @@
 # Mutation Testing
 
++ Language: Java
++ Level: Intermediate
++ Requires: Java 1.8+, Internet, Gradle, IDE strongly recommended
+
 ## Objective ##
 
 100% code coverage, all set and done. Objections? Well, let's have a go at being smarter than the code and introduce bugs that are not detected.
@@ -8,7 +12,7 @@ In the epic battle between human mind and machine power it's your turn for victo
 
 ## Code ##
 
-Grab a code base with 100% code coverage, see kata "Easter Egg Hunt". Then start and try to change the code so that the tests don't break albeit the code is erraneous. Rinse and repeat. 
+Check out the code and build it with `gradlew build` on Mac or Linux or `gradlew.bat build` on Windows. Check the code coverage, should be 100%. Then start and try to change the code so that the tests don't break albeit the code is erraneous. Rinse and repeat. 
 
 - How many defects can you introduce within 30 minutes?
 - What kind of defects are these?
@@ -33,3 +37,7 @@ Summary, pretty good        | https://en.wikipedia.org/wiki/Mutation_testing
 Automated test tool         | http://pitest.org/
 Eclipse Integration         | https://github.com/philglover/pitclipse
 IntelliJ integration        | http://plugins.jetbrains.com/plugin/?idea&pluginId=7119
+
+## Credits ##
+
+The sample code and the reasoning are shamelessly copied from https://github.com/hovinen/EasterEggHunt and all credits go to Bradford Hovinen for that. Thanks for adding this tool to my set of utilities. 

@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Easter Egg Hunt',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:19.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    testCompile 'junit:junit:4.+'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+    testCompile 'com.google.guava:guava-testlib:19.0'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
