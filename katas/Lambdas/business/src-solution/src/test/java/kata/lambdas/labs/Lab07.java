@@ -7,9 +7,8 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static kata.lambdas.model.Movies.*;
@@ -38,24 +37,28 @@ public class Lab07 {
     }
 
     public List<Movie> recommendMoviesFor(final User user) {
-        Map<Movie, Long> movies = new HashMap<>();
-
         // first find out how many actors are favored in a particular movie if any
-        Movies.list().forEach(movie -> {
-            long favorites = movie.getActors().stream().filter(user::isFavoriteActor).count();
-            if (favorites > 0) movies.put(movie, favorites);
-        });
+        // @formatter:off
+        final Function<Movie, Long> numberOfFavoriteActorsInMovie =
+          movie -> movie.getActors().stream()
+                        .filter(user::isFavoriteActor)
+                        .count()
+                        ;
+        // @formatter:on
+        final Comparator<Movie> sortByFavorites = Comparator.comparingLong(numberOfFavoriteActorsInMovie::apply).reversed();
 
-        // then rank these movies and return the resulting set ... use .limit() to restrict the list further
-        return movies.keySet().stream().sorted(
-                // the more favorites the better
-                ((Comparator<Movie>) (left, right) -> movies.get(right).compareTo(movies.get(left)))
-                        // the less actors the more of the favorites
-                        .thenComparing((left, right) -> left.getActors().size() - right.getActors().size())
-                                // finally in alphabetic order
-                        .thenComparing(Comparator.<Movie>naturalOrder())
-        )
-                .limit(5)
-                .collect(Collectors.toList());
+        // the more favorites the better as they are likely to be longer on screen
+        final Comparator<Movie> sortByScreenPresence = Comparator.comparingInt(a -> a.getActors().size());
+
+        // @formatter:off
+        return Movies.list().parallelStream()
+                     .filter(movie -> movie.getActors().stream().anyMatch(user::isFavoriteActor)) 
+                     .sorted(
+                        sortByFavorites
+                        .thenComparing(sortByScreenPresence)
+                        .thenComparing(Comparator.naturalOrder())
+                     )
+                     .collect(Collectors.toList());
+        // @formatter:on
     }
 }
