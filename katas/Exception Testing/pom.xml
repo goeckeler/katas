@@ -26,7 +26,7 @@
     <args4j.version>2.32</args4j.version>
     <!-- use 3.2.0 for Java 8 projects and 2.2.0 for all other projects -->
     <assertj.version>3.2.0</assertj.version>
-    <commons.lang.version>3.4</commons.lang.version>
+    <commons.lang.version>3.18.0</commons.lang.version>
     <commons.collections.version>4.1</commons.collections.version>
     <commons.io.version>2.7</commons.io.version>
     <junit.version>4.13.1</junit.version>
