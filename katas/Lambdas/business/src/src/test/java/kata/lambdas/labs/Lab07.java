@@ -1,10 +1,15 @@
 package kata.lambdas.labs;
 
+import static kata.lambdas.model.Movies.*;
+import static kata.lambdas.model.Users.JANE_DOE;
+import static kata.lambdas.model.Users.JOHN_DOE;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import kata.lambdas.domain.Movie;
 import kata.lambdas.domain.User;
 import kata.lambdas.model.Movies;
 import org.hamcrest.Matchers;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,11 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import static kata.lambdas.model.Movies.*;
-import static kata.lambdas.model.Users.JANE_DOE;
-import static kata.lambdas.model.Users.JOHN_DOE;
-import static org.junit.Assert.assertThat;
 
 
 public class Lab07 {

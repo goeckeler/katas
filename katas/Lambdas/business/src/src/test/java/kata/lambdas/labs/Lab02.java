@@ -2,7 +2,7 @@ package kata.lambdas.labs;
 
 import kata.lambdas.model.Actors;
 import kata.lambdas.model.Movies;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Lab02 {
     @Test
