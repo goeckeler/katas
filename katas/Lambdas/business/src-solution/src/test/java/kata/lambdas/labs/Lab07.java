@@ -1,21 +1,20 @@
 package kata.lambdas.labs;
 
+import static kata.lambdas.model.Movies.*;
+import static kata.lambdas.model.Users.JANE_DOE;
+import static kata.lambdas.model.Users.JOHN_DOE;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+
 import kata.lambdas.domain.Movie;
 import kata.lambdas.domain.User;
 import kata.lambdas.model.Movies;
-import org.hamcrest.Matchers;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
-import static kata.lambdas.model.Movies.*;
-import static kata.lambdas.model.Users.JANE_DOE;
-import static kata.lambdas.model.Users.JOHN_DOE;
-import static org.junit.Assert.assertThat;
-
 
 public class Lab07 {
     /**
@@ -29,10 +28,10 @@ public class Lab07 {
     public void shouldRecommendMovies() {
         System.out.println("Lab07.shouldRecommendMovies");
         // check that the correct movies are found in the correct order
-        assertThat("Incorrect ranking of Jane's favorites", recommendMoviesFor(JANE_DOE), Matchers.contains(NOTTING_HILL, QUINDON_PARK, THE_MEXICAN, THE_UNSEEN));
+        assertThat("Incorrect ranking of Jane's favorites", recommendMoviesFor(JANE_DOE), contains(NOTTING_HILL, QUINDON_PARK, THE_MEXICAN, THE_UNSEEN));
 
         // check that the correct movies are found in the correct order
-        assertThat("Incorrect ranking of John's favorites", recommendMoviesFor(JOHN_DOE), Matchers.contains(THE_UNSEEN, THE_BEACH, THE_MEXICAN, NOTTING_HILL));
+        assertThat("Incorrect ranking of John's favorites", recommendMoviesFor(JOHN_DOE), contains(THE_UNSEEN, THE_BEACH, THE_MEXICAN, NOTTING_HILL));
         // check that the correct movies are found in the correct order
     }
 

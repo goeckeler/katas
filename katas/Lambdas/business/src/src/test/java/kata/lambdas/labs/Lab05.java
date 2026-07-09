@@ -1,10 +1,10 @@
 package kata.lambdas.labs;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import kata.lambdas.model.Movies;
 import org.hamcrest.Matchers;
-import org.junit.Test;
-
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
 
 public class Lab05 {
     @Test

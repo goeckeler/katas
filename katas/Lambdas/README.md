@@ -3,11 +3,11 @@ Lambdas Katas
 
 + Language: Java
 + Level: Intermediate
-+ Requires: Java 1.8+, JUnit 4.12+, IDE recommended
++ Requires: Java 25+, JUnit 6+, IDE recommended
 
 ## Objective
 
-With the advent of Java 8 the language itself gets a facelift, namely Lambdas and Streams amongst others. These katas will help you get a basic grip of these new features.
+With the advent of Java 8 the language itself got a facelift, namely Lambdas and Streams amongst others. These katas will help you get a basic grip of these features.
 
 ## Katas
 
